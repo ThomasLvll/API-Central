@@ -1,6 +1,6 @@
 # API Central
 
-A portal that provides access to different APIs, managing authentication and permissions.
+A Node.js RESTful API that provides access to different APIs, managing authentication and permissions.
 
 
 ## Documentation

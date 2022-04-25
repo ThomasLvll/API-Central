@@ -1,6 +1,6 @@
 # API Central
 
-A portal that provides access to different APIs, providing authentication and permissions.
+A portal that provides access to different APIs, managing authentication and permissions.
 
 
 ## Documentation

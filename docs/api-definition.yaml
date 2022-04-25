@@ -1,0 +1,544 @@
+# API Central Template #
+# OpenAPI version
+openapi: '3.0.3'
+
+# API info
+info:
+    title: API Central
+    description: Provides an access to served APIs.
+    termsOfService: https://example.com/terms
+    contact:
+        name: API Support
+        url: https://example.com/support
+        email: apisupport@example.com
+    # API definition file version (different from API version)
+    version: '1.1.3'
+
+
+servers:
+    - url: https://example.com/api
+      description: Production server
+
+
+security:
+    - {}
+
+
+components:
+    securitySchemes:
+        authToken:
+            type: http
+            description: A token that identifies the client.
+            scheme: bearer
+            bearerFormat: base64(clientId:md5(clientSecret))
+        
+        apiToken:
+            type: http
+            description: A token that allows applicant to call the served APIs. Identifies user and requested permissions.
+            scheme: bearer
+            bearerFormat: JWT
+    
+    schemas:
+        Error:
+            type: object
+            required:
+                - code
+                - message
+            properties:
+                code:
+                    type: integer
+                    description: Error code.
+                message:
+                    type: string
+                    description: Error message.
+        
+        Meta:
+            type: object
+            properties:
+                createdDate:
+                    type: string
+                    format: date-time
+                lastUpdatedDate:
+                    type: string
+                    format: date-time
+        
+        APIPermission:
+            type: object
+            required:
+                - key
+            properties:
+                key:
+                    type: string
+                byDefault:
+                    type: boolean
+                    default: false
+
+        API:
+            type: object
+            required:
+                - id
+                - displayName
+                - rootUrl
+                - permissions
+            properties:
+                id:
+                    type: string
+                    minLength: 1
+                    maxLength: 64
+                displayName:
+                    type: string
+                    minLength: 1
+                rootUrl:
+                    type: string
+                    minLength: 1
+                isActive:
+                    type: boolean
+                    default: false
+                permissions:
+                    type: array
+                    minItems: 1
+                    items:
+                        $ref: '#/components/schemas/APIPermission'
+                meta:
+                    $ref: '#/components/schemas/Meta'
+        
+        ResourceCreated:
+            type: object
+            required:
+                - id
+                - resourceType
+                - createdDate
+            properties:
+                id:
+                    type: string
+                resourceType:
+                    type: string
+                createdDate:
+                    type: string
+                    format: date-time
+                urls:
+                    type: object
+                    properties:
+                        get:
+                            type: string
+                        update:
+                            type: string
+                        delete:
+                            type: string
+        
+        ResourceUpdated:
+            type: object
+            required:
+                - id
+                - resourceType
+                - updatedDate
+                - updatedFields
+            properties:
+                id:
+                    type: string
+                resourceType:
+                    type: string
+                updatedDate:
+                    type: string
+                    format: date-time
+                updatedFields:
+                    type: array
+                    items:
+                        type: object
+                        required:
+                            - name
+                            - oldValue
+                            - newValue
+                        properties:
+                            name:
+                                type: string
+                            oldValue:
+                                type: string
+                            newValue:
+                                type: string
+                urls:
+                    type: object
+                    properties:
+                        get:
+                            type: string
+                        update:
+                            type: string
+                        delete:
+                            type: string
+    
+
+    responses:
+        # error responses
+        Error404NotFound:
+            description: Resource was not found.
+            content:
+                application/json:
+                    schema:
+                        $ref: '#/components/schemas/Error'
+                text/plain:
+                    schema:
+                        type: string
+                        example: 404 Resource of type \'API\' was not found.
+        
+        Error1000AuthTokenNotSupplied:
+            description: No Auth token supplied.
+            content:
+                application/json:
+                    schema:
+                        $ref: '#/components/schemas/Error'
+                text/plain:
+                    schema:
+                        type: string
+                        example: 1000 No Auth token supplied.
+        
+        Error1001AuthTokenInvalid:
+            description: Invalid Auth token.
+            content:
+                application/json:
+                    schema:
+                        $ref: '#/components/schemas/Error'
+                text/plain:
+                    schema:
+                        type: string
+                        example: 1001 Invalid Auth token.
+
+        Error1010APITokenNotSupplied:
+            description: No API token supplied.
+            content:
+                application/json:
+                    schema:
+                        $ref: '#/components/schemas/Error'
+                text/plain:
+                    schema:
+                        type: string
+                        example: 1010 No API token supplied.
+        
+        Error1011APITokenInvalid:
+            description: Invalid API token.
+            content:
+                application/json:
+                    schema:
+                        $ref: '#/components/schemas/Error'
+                text/plain:
+                    schema:
+                        type: string
+                        example: 1011 No API token supplied.
+        
+        Error1012APITokenExpired:
+            description: API token has expired.
+            content:
+                application/json:
+                    schema:
+                        $ref: '#/components/schemas/Error'
+                text/plain:
+                    schema:
+                        type: string
+                        example: 1012 API token has expired.
+        
+
+        # general responses
+        ResourceCreated:
+            description: Resource has been created.
+            content:
+                application/json:
+                    schema:
+                        $ref: '#/components/schemas/ResourceCreated'
+                text/plain:
+                    schema:
+                        type: string
+                        example: test-api
+                        # returns new resource's id
+        
+        ResourceUpdated:
+            description: Resource has been updated.
+            content:
+                application/json:
+                    schema:
+                        $ref: '#/components/schemas/ResourceUpdated'
+                text/plain:
+                    schema:
+                        type: string
+                        example: test-api
+                        # returns resource id
+
+
+
+paths:
+    /status:
+        get:
+            description: Gets the server status.
+            responses:
+                '200':
+                    description: Server is up.
+
+    /token:
+        get:
+            tags:
+                - auth
+            description: Gets an API token.
+            security:
+                - authToken: []
+            responses:
+                '200':
+                    description: API token has been created.
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/securitySchemes/apiToken'
+                '400':
+                    $ref: '#/components/responses/Error1000AuthTokenNotSupplied'
+                '401':
+                    $ref: '#/components/responses/Error1001AuthTokenInvalid'
+    
+    /token/verify:
+        get:
+            tags:
+                - auth
+            description: Verifies the supplied API token.
+            security:
+                - apiToken: []
+            responses:
+                '200':
+                    description: API token is valid.
+                '400':
+                    $ref: '#/components/responses/Error1010APITokenNotSupplied'
+                '401':
+                    $ref: '#/components/responses/Error1011APITokenInvalid'
+    
+    /apis:
+        get:
+            tags:
+                - api
+            description: Gets a list of available served APIs. API only shows up if user has the \'index\' permission on its context.
+            security:
+                - apiToken: []
+            responses:
+                '200':
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: '#/components/schemas/API'
+                '400':
+                    $ref: '#/components/responses/Error1010APITokenNotSupplied'
+                '401':
+                    $ref: '#/components/responses/Error1011APITokenInvalid'
+        post:
+            tags:
+                - api
+            description: Creates an API. User must have the \'create-api\' permission on \'central\' context.
+            security:
+                - apiToken: []
+            requestBody:
+                description: API to create.
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/API'
+            responses:
+                '201':
+                    $ref: '#/components/responses/ResourceCreated'
+                '400':
+                    $ref: '#/components/responses/Error1010APITokenNotSupplied'
+                '401':
+                    $ref: '#/components/responses/Error1011APITokenInvalid'
+                '403':
+                    description: \'create-api\' permission on \'central\' context is missing.
+    
+    /apis/{id}:
+        parameters:
+            - name: id
+              in: path
+              description: ID of API.
+              required: true
+              example: test-api
+              schema:
+                  type: string
+        get:
+            tags:
+                - api
+            description: Gets an API by ID. User must have the \'view-api\' permission on its context.
+            security:
+                - apiToken: []
+            responses:
+                '200':
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/API'
+                '400':
+                    $ref: '#/components/responses/Error1010APITokenNotSupplied'
+                '401':
+                    $ref: '#/components/responses/Error1011APITokenInvalid'
+                '403':
+                    description: \'view-api\' permission on API context is missing.
+                '404':
+                    $ref: '#/components/responses/Error404NotFound'
+        patch:
+            tags:
+                - api
+            description: Updates an API by ID. User must have the \'modify-api\' permission on its context.
+            security:
+                - apiToken: []
+            responses:
+                '200':
+                    description: OK
+                '404':
+                    $ref: '#/components/responses/Error404NotFound'
+
+    /api/{slug}:
+        parameters:
+            - name: slug
+              in: path
+              description: URL slug of API.
+              required: true
+              example: test-api
+              schema:
+                  type: string
+        get:
+            tags:
+                - api
+                - call-external
+            description: Calls an API by slug.
+            security:
+                - apiToken: []
+            responses:
+                '200':
+                    description: Request is forwarded to the API.
+                '400':
+                    $ref: '#/components/responses/Error1010APITokenNotSupplied'
+                '401':
+                    $ref: '#/components/responses/Error1011APITokenInvalid'
+                '403':
+                    description: \'call-api\' permission on API context is missing.
+                '404':
+                    $ref: '#/components/responses/Error404NotFound'
+        put:
+            tags:
+                - api
+                - call-external
+            description: Calls an API by slug.
+            security:
+                - apiToken: []
+            responses:
+                '200':
+                    description: Request is forwarded to the API.
+                '400':
+                    $ref: '#/components/responses/Error1010APITokenNotSupplied'
+                '401':
+                    $ref: '#/components/responses/Error1011APITokenInvalid'
+                '403':
+                    description: \'call-api\' permission on API context is missing.
+                '404':
+                    $ref: '#/components/responses/Error404NotFound'
+        post:
+            tags:
+                - api
+                - call-external
+            description: Calls an API by slug.
+            security:
+                - apiToken: []
+            responses:
+                '200':
+                    description: Request is forwarded to the API.
+                '400':
+                    $ref: '#/components/responses/Error1010APITokenNotSupplied'
+                '401':
+                    $ref: '#/components/responses/Error1011APITokenInvalid'
+                '403':
+                    description: \'call-api\' permission on API context is missing.
+                '404':
+                    $ref: '#/components/responses/Error404NotFound'
+        delete:
+            tags:
+                - api
+                - call-external
+            description: Calls an API by slug.
+            security:
+                - apiToken: []
+            responses:
+                '200':
+                    description: Request is forwarded to the API.
+                '400':
+                    $ref: '#/components/responses/Error1010APITokenNotSupplied'
+                '401':
+                    $ref: '#/components/responses/Error1011APITokenInvalid'
+                '403':
+                    description: \'call-api\' permission on API context is missing.
+                '404':
+                    $ref: '#/components/responses/Error404NotFound'
+        options:
+            tags:
+                - api
+                - call-external
+            description: Calls an API by slug.
+            security:
+                - apiToken: []
+            responses:
+                '200':
+                    description: Request is forwarded to the API.
+                '400':
+                    $ref: '#/components/responses/Error1010APITokenNotSupplied'
+                '401':
+                    $ref: '#/components/responses/Error1011APITokenInvalid'
+                '403':
+                    description: \'call-api\' permission on API context is missing.
+                '404':
+                    $ref: '#/components/responses/Error404NotFound'
+        head:
+            tags:
+                - api
+                - call-external
+            description: Calls an API by slug.
+            security:
+                - apiToken: []
+            responses:
+                '200':
+                    description: Request is forwarded to the API.
+                '400':
+                    $ref: '#/components/responses/Error1010APITokenNotSupplied'
+                '401':
+                    $ref: '#/components/responses/Error1011APITokenInvalid'
+                '403':
+                    description: \'call-api\' permission on API context is missing.
+                '404':
+                    $ref: '#/components/responses/Error404NotFound'
+        patch:
+            tags:
+                - api
+                - call-external
+            description: Calls an API by slug.
+            security:
+                - apiToken: []
+            responses:
+                '200':
+                    description: Request is forwarded to the API.
+                '400':
+                    $ref: '#/components/responses/Error1010APITokenNotSupplied'
+                '401':
+                    $ref: '#/components/responses/Error1011APITokenInvalid'
+                '403':
+                    description: \'call-api\' permission on API context is missing.
+                '404':
+                    $ref: '#/components/responses/Error404NotFound'
+        trace:
+            tags:
+                - api
+                - call-external
+            description: Calls an API by slug.
+            security:
+                - apiToken: []
+            responses:
+                '200':
+                    description: Request is forwarded to the API.
+                '400':
+                    $ref: '#/components/responses/Error1010APITokenNotSupplied'
+                '401':
+                    $ref: '#/components/responses/Error1011APITokenInvalid'
+                '403':
+                    description: \'call-api\' permission on API context is missing.
+                '404':
+                    $ref: '#/components/responses/Error404NotFound'

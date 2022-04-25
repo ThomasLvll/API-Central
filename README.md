@@ -1,6 +1,7 @@
 # API Central
 
 Interconnection portal between different APIs.
+It provides authentication and permissions to these APIs.
 
 
 ## Documentation

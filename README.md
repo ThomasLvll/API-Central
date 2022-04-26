@@ -62,7 +62,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![API Central Screen Shot][product-screenshot]]
+![API Central Screen Shot][product-screenshot]
 
 API Central is a Node.js API that aims to simplify access and authentication management of many APIs.
 

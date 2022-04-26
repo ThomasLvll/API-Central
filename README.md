@@ -22,9 +22,9 @@
     <br />
     <br />
     <a href="https://github.com/ThomasLvll/API-Central">View Demo</a>
-    /
+    ·
     <a href="https://github.com/ThomasLvll/API-Central/issues">Report Bug</a>
-    /
+    ·
     <a href="https://github.com/ThomasLvll/API-Central/issues">Request Feature</a>
   </p>
 </div>

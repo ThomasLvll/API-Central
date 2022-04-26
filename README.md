@@ -119,10 +119,9 @@ This is an example of how to list things you need to use the software and how to
 ### API Usage Flow
 
 #### 1. Register into API
-
 _This step only should be performed once._
-
 You can sign up and subscribe to API through Central web interface.
+
 
 #### 2. Request an API token
 

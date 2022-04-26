@@ -16,7 +16,7 @@
   <h3 align="center">API Central</h3>
 
   <p align="center">
-    A Node.js RESTful API that provides management and access to different APIs, handling authentication and permissions.
+    Node.js RESTful API that provides management and access to different APIs, handling authentication and permissions.
     <br />
     <a href="https://github.com/ThomasLvll/API-Central"><strong>Explore the docs »</strong></a>
     <br />
@@ -62,7 +62,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![API Central Screen Shot][product-screenshot]]
+
+API Central is a Node.js API that aims to simplify access and authentication management of many APIs.
 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 

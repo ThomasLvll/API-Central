@@ -162,6 +162,33 @@ In case of success, the JSON response body has the following form:
 }
 ```
 
+
+
+#### 3. Call the API
+
+Once your API token has been obtained, you can make requests to [endpoints of the API](#api-endpoints).
+
+Even if not all paths require an authorization, it is recommended to always include API token in your requests. It must be passed as `Authorization` HTTP request header, strictly matching the following format:
+```
+Authorization: Bearer <authToken>
+```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+### Permissions
+
+To allow only certain users to manipulate particular data within API Central and served APIs, permissions can be assigned to users and API tokens.
+
+A permission has the form:
+
+```
+context:right
+```
+
+`context` is the scope on which the permission is assigned, and `right` is the type of permission. For example, `central:create-api` allows user to add an API within API Central.
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 

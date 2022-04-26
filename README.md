@@ -22,9 +22,9 @@
     <br />
     <br />
     <a href="https://github.com/ThomasLvll/API-Central">View Demo</a>
-    ·
+    #
     <a href="https://github.com/ThomasLvll/API-Central/issues">Report Bug</a>
-    ·
+    #
     <a href="https://github.com/ThomasLvll/API-Central/issues">Request Feature</a>
   </p>
 </div>
@@ -73,6 +73,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 ### Built With
 
 * [Node.js](https://nodejs.org/)
+* [MongoDB](https://mongodb.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -198,6 +199,7 @@ Project Link: [https://github.com/ThomasLvll/API-Central](https://github.com/Tho
 [issues-url]: https://github.com/ThomasLvll/API-Central/issues
 [license-shield]: https://img.shields.io/github/license/ThomasLvll/API-Central.svg?style=for-the-badge
 [license-url]: https://github.com/ThomasLvll/API-Central/blob/master/LICENSE.txt
+
 [portfolio-shield]: https://img.shields.io/badge/-Portfolio-important.svg?style=for-the-badge
 [portfolio-url]: http://thomasleveille.com
 [product-screenshot]: docs/img/screenshot.png

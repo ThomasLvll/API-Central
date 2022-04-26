@@ -1,8 +1,8 @@
 <!-- PROJECT SHIELDS -->
 [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
+<!-- [![Forks][forks-shield]][forks-url] -->
+<!-- [![Stargazers][stars-shield]][stars-url] -->
+<!-- [![Issues][issues-shield]][issues-url] -->
 [![MIT License][license-shield]][license-url]
 [![Portfolio][portfolio-shield]][portfolio-url]
 
@@ -11,8 +11,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/ThomasLvll/API-Central">
+    <img src="docs/img/logo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">project_title</h3>
@@ -207,6 +207,6 @@ Project Link: [https://github.com/ThomasLvll/API-Central](https://github.com/Tho
 [issues-url]: https://github.com/ThomasLvll/API-Central/issues
 [license-shield]: https://img.shields.io/github/license/ThomasLvll/API-Central.svg?style=for-the-badge
 [license-url]: https://github.com/ThomasLvll/API-Central/blob/master/LICENSE.txt
-[portfolio-shield]: https://img.shields.io/badge/-Portfolio-black.svg?style=for-the-badge
+[portfolio-shield]: https://img.shields.io/badge/-Portfolio-important.svg?style=for-the-badge
 [portfolio-url]: http://thomasleveille.com
-[product-screenshot]: docs/screenshot.png
+[product-screenshot]: docs/img/screenshot.png

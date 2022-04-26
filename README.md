@@ -52,6 +52,7 @@
       <a href="#documentation">Documentation</a>
       <ul>
         <li><a href="#api">API</a></li>
+        <li><a href="#permissions">Permissions</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>

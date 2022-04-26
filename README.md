@@ -116,9 +116,49 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+### API Usage Flow
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+#### 1. Register into API
+
+_This step only should be performed once._
+
+You can sign up and subscribe to API through Central web interface.
+
+#### 2. Request an API token
+
+_This step should be repeated each time the token expires._
+
+You can do so by making a `GET /token` HTTP request to API, passing the client ID and secret keys returned in previous step as `Authorization` HTTP request header.
+
+The header must strictly match the following format:
+```
+Authorization: Bearer <authToken>
+```
+
+where `authToken` is a __base64-encoded__ string in this format:
+```
+<clientId>:<clientSecretHash>:<listOfPermissions>
+```
+where `clientId` obviously is your client ID key, and `clientSecretHash` is a hash of your client secret key. Supported hashing methods are the following:
+* MD5
+* SHA1
+
+`listOfPermissions` parameter is a comma-separated list of [permissions](#api-permissions) you want your API token to own.
+
+The HTTP request finally looks like:
+```
+GET /token
+Authorization: Bearer af456zjk54...
+```
+
+In case of success, the JSON response body has the following form:
+```json
+{
+	"apiToken": "kl593fkfd240...",
+	"expirationDate": "2022-04-26 17:10:25.230 +00:00",
+	"refreshUrl": "https://example.com/token/refresh/kl593fkfd240..."
+}
+```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

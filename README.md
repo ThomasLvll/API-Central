@@ -48,7 +48,22 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
+    <li>
+      <a href="#documentation">Documentation</a>
+      <ul>
+        <li><a href="#api">API</a></li>
+      </ul>
+    </li>
     <li><a href="#usage">Usage</a></li>
+      <ul>
+        <li>
+	  <a href="#api-usage-flow">API Usage Flow</a>
+          <ol>
+            <li><a href="#1-register-into-api">Register into API</a></li>
+            <li><a href="#2-request-an-api-token">Request an API token</a></li>
+            <li><a href="#3-call-the-api">Call the API</a></li>
+          </ol>
+      </ul>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -126,6 +141,22 @@ They follow [OpenAPI 3.0.3 specification](https://github.com/OAI/OpenAPI-Specifi
 
 
 
+### Permissions
+
+To allow only certain users to manipulate particular data within API Central and served APIs, permissions can be assigned to users and API tokens.
+
+A permission has the form:
+
+```
+context:right
+```
+
+`context` is the scope on which the permission is assigned, and `right` is the type of permission. For example, `central:create-api` allows user to add an API within API Central.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
 <!-- USAGE EXAMPLES -->
 ## Usage
 
@@ -185,22 +216,6 @@ Even if not all paths require an authorization, it is recommended to always incl
 ```
 Authorization: Bearer <authToken>
 ```
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-### Permissions
-
-To allow only certain users to manipulate particular data within API Central and served APIs, permissions can be assigned to users and API tokens.
-
-A permission has the form:
-
-```
-context:right
-```
-
-`context` is the scope on which the permission is assigned, and `right` is the type of permission. For example, `central:create-api` allows user to add an API within API Central.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

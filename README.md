@@ -189,7 +189,7 @@ where `clientId` obviously is your client ID key, and `clientSecretHash` is a ha
 * MD5
 * SHA1
 
-`listOfPermissions` parameter is a comma-separated list of [permissions](#api-permissions) you want your API token to own.
+`listOfPermissions` parameter is a comma-separated list of [permissions](#permissions) you want your API token to own.
 
 The HTTP request finally looks like:
 ```

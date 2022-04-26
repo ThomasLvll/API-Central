@@ -12,23 +12,20 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/ThomasLvll/API-Central">
-    <img src="docs/img/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-<h3 align="center">project_title</h3>
+  <!-- <img src="docs/img/logo.png" alt="Logo" width="80" height="80"> -->
+  <h3 align="center">API Central</h3>
 
   <p align="center">
-    project_description
+    A Node.js RESTful API that provides management and access to different APIs, handling authentication and permissions.
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/ThomasLvll/API-Central"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://github.com/ThomasLvll/API-Central">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/ThomasLvll/API-Central/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/ThomasLvll/API-Central/issues">Request Feature</a>
   </p>
 </div>
 
@@ -107,7 +104,7 @@ This is an example of how to list things you need to use the software and how to
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/ThomasLvll/API-Central.git
    ```
 3. Install NPM packages
    ```sh

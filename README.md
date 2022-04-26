@@ -33,7 +33,7 @@
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary><a>Table of Contents</a></summary>
+  <summary><u>Table of Contents</u></summary>
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>

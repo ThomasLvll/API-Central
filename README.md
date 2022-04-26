@@ -129,9 +129,9 @@ To allow only certain users to manipulate particular data within API Central and
 
 A permission has the form:
 
-
-    context:right
-
+```
+context:right
+```
 
 `context` is the scope on which the permission is assigned, and `right` is the type of permission. For example, `central:create-api` allows user to add an API within API Central.
 

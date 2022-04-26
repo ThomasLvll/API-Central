@@ -152,6 +152,7 @@ You can sign up and subscribe to API through Central web interface.
 
 
 
+
 #### 2. Request an API token
 
 ___This step should be repeated each time the token expires.___

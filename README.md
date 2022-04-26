@@ -207,6 +207,6 @@ Project Link: [https://github.com/ThomasLvll/API-Central](https://github.com/Tho
 [issues-url]: https://github.com/ThomasLvll/API-Central/issues
 [license-shield]: https://img.shields.io/github/license/ThomasLvll/API-Central.svg?style=for-the-badge
 [license-url]: https://github.com/ThomasLvll/API-Central/blob/master/LICENSE.txt
-[portfolio-shield]: https://img.shields.io/badge/Portfolio-Portfolio-black.svg?style=for-the-badge&colorB=555
+[portfolio-shield]: https://img.shields.io/badge/-Portfolio-black.svg?style=for-the-badge
 [portfolio-url]: http://thomasleveille.com
 [product-screenshot]: docs/screenshot.png

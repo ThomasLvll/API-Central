@@ -119,13 +119,16 @@ This is an example of how to list things you need to use the software and how to
 ### API Usage Flow
 
 #### 1. Register into API
-_This step only should be performed once._
+
+___This step only should be performed once.___
+
 You can sign up and subscribe to API through Central web interface.
+
 
 
 #### 2. Request an API token
 
-_This step should be repeated each time the token expires._
+___This step should be repeated each time the token expires.___
 
 You can do so by making a `GET /token` HTTP request to API, passing the client ID and secret keys returned in previous step as `Authorization` HTTP request header.
 

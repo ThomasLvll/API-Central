@@ -113,6 +113,15 @@ This is an example of how to list things you need to use the software and how to
 
 
 
+## Documentation
+
+### API
+
+[Definition](docs/api-definition.yaml) and documentation of API have been done using [Postman](https://www.postman.com/).
+They follow [OpenAPI 3.0.3 specification](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md).
+
+
+
 <!-- USAGE EXAMPLES -->
 ## Usage
 

@@ -236,7 +236,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/) License. See `LICENSE.txt` for more information.
+Distributed under the [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/) License. See [`COPYING`](COPYING) for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

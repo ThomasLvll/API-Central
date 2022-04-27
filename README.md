@@ -6,7 +6,7 @@
   <p align="center">
     Node.js RESTful API that provides management and access to different APIs, handling authentication and permissions.
     <br />
-    <a href="https://github.com/ThomasLvll/API-Central"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/ThomasLvll/API-Central/docs"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/ThomasLvll/API-Central">View Demo</a>

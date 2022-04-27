@@ -135,6 +135,8 @@ context:right
 
 Both `context` and `right` can be replaced with the `*` wildcard, giving user a permission within all the contexts, and/or all the permissions within a context.
 
+___Warning_____: giving full permissions to a user is rarely the best solution, so the `*` wildcard should be used with caution.__
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 

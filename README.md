@@ -147,7 +147,7 @@ where `clientId` obviously is your client ID key, and `clientSecretHash` is a ha
 * MD5
 * SHA1
 
-`listOfPermissions` parameter is a comma-separated list of [permissions](#permissions) you want your API token to own.
+`listOfPermissions` parameter is a comma-separated list of [permissions](docs#permissions) you want your API token to own.
 
 The HTTP request finally looks like:
 ```
@@ -168,7 +168,7 @@ In case of success, the JSON response body has the following form:
 
 #### 3. Call the API
 
-Once your API token has been obtained, you can make requests to [endpoints of the API](#api-endpoints).
+Once your API token has been obtained, you can make requests to [endpoints of the API](docs/api-documentation#api-endpoints).
 
 Even if not all paths require an authorization, it is recommended to always include API token in your requests. It must be passed as `Authorization` HTTP request header, strictly matching the following format:
 ```

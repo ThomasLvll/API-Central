@@ -1,7 +1,7 @@
 # Documentation for API Central
 
 <a name="documentation-for-api-endpoints"></a>
-## Documentation for API Endpoints
+## API Endpoints
 
 All URIs are relative to *http://141.94.79.199:2001*
 
@@ -33,7 +33,7 @@ Class | Method | HTTP request | Description
 
 
 <a name="documentation-for-models"></a>
-## Documentation for Models
+## Models
 
  - [API](./Models/API.md)
  - [APIPermission](./Models/APIPermission.md)
@@ -46,7 +46,7 @@ Class | Method | HTTP request | Description
 
 
 <a name="documentation-for-authorization"></a>
-## Documentation for Authorization
+## Authorization
 
 <a name="apiToken"></a>
 ### apiToken

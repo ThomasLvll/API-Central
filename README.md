@@ -133,6 +133,8 @@ context:right
 
 `context` is the scope on which the permission is assigned, and `right` is the type of permission. For example, `central:create-api` allows user to add an API within API Central.
 
+Both `context` and `right` can be replaced with the `*` wildcard, giving user a permission within all the contexts, and/or all the permissions within a context.
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 

@@ -1,8 +1,7 @@
 <!-- PROJECT HEADER -->
-<br />
 <div align="center">
-  <!-- <img src="docs/img/logo.png" alt="Logo" width="80" height="80"> -->
-  <h3 align="center">API Central</h3>
+  <!-- <img src="docs/img/logo.png" alt="Logo" width="80" height="80">
+  --><h3 align="center">API Central</h3>
 
   <p align="center">
     Node.js RESTful API that provides management and access to different APIs, handling authentication and permissions.
@@ -114,28 +113,7 @@ This is an example of how to list things you need to use the software and how to
 
 
 
-## Documentation
-
-### API
-
-[Definition](docs/api-definition.yaml) and [documentation](docs/api-documentation/) of API have been done using [Postman](https://www.postman.com/).
-They follow [OpenAPI 3.0.3 specification](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md).
-
-### Permissions
-
-To allow only certain users to manipulate particular data within API Central and served APIs, permissions can be assigned to users and API tokens.
-
-A permission has the form:
-
-```
-context:right
-```
-
-`context` is the scope on which the permission is assigned, and `right` is the type of permission. For example, `central:create-api` allows user to add an API within API Central.
-
-Both `context` and `right` can be replaced with the `*` wildcard, giving user a permission within all the contexts, and/or all the permissions within a context.
-
-___Warning: giving full permissions to a user is rarely the best solution, so the `*` wildcard should be used with caution.___
+## [Documentation](docs)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

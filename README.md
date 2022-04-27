@@ -6,7 +6,7 @@
   <p align="center">
     Node.js RESTful API that provides management and access to different APIs, handling authentication and permissions.
     <br />
-    <a href="docs"><strong>Explore the docs »</strong></a>
+    <a href="docs/README.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="demo">View Demo</a>

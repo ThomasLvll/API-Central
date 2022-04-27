@@ -1,7 +1,7 @@
 <!-- PROJECT HEADER -->
 <div align="center">
   <!-- <img src="docs/img/logo.png" alt="Logo" width="80" height="80">
-  --><h3 align="center">[API Central](https://github.com/ThomasLvll/API-Central) / Documentation</h3>
+  --><h3 align="center"><a href="https://github.com/ThomasLvll/API-Central">API Central</a> / Documentation</h3>
 </div>
 
 

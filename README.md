@@ -9,11 +9,11 @@
     <a href="docs"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/ThomasLvll/API-Central">View Demo</a>
+    <a href="demo">View Demo</a>
     ·
-    <a href="https://github.com/ThomasLvll/API-Central/issues">Report Bug</a>
+    <a href="issues">Report Bug</a>
     ·
-    <a href="https://github.com/ThomasLvll/API-Central/issues">Request Feature</a>
+    <a href="issues">Request Feature</a>
   </p>
 </div>
 
